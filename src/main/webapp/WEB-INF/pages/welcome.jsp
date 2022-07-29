@@ -25,6 +25,12 @@
 <div id="parent">
 </div>
 
+<select id="liste">
+</select>
+<input type="button" value="Click here... pour plus de détail!" id="detail">
+<div id="detail-content">
+</div>
+
 <main>
 
  <script>
@@ -43,6 +49,36 @@
 					"/" + element.date.dayOfMonth + "<br>";
 					parent.appendChild(p);
 				} 
+			 });
+		});
+	 
+	 	
+		fetch("/demo1/api/tache")
+			 .then((response) => response.json())
+			 .then((data)=>{
+				 let liste = document.getElementById('liste');
+					console.table(data);
+				 for(let i = 0; i < data.length; i++){
+					let option = document.createElement('option');
+					option.innerHTML = data[i].nom;
+					option.setAttribute("value", i);
+					liste.appendChild(option);
+				} 
+			 });
+		
+		 document.querySelector('#detail').addEventListener('click',()=>{
+			 
+			 fetch("/demo1/api/tache/" + document.querySelector('#liste').value)
+			 .then((response) => response.json())
+			 .then((data)=>{
+				 let detail = document.getElementById('detail-content');
+					console.table(data);
+					let p = document.createElement('p');
+					p.innerHTML = data.nom + "---" +data.description + 
+					"---" + data.date.year + 
+					"/" + data.date.monthValue + 
+					"/" + data.date.dayOfMonth + "<br>";
+					detail.appendChild(p);
 			 });
 		});
  

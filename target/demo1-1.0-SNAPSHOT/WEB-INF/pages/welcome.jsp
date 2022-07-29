@@ -20,17 +20,35 @@
 <jsp:include page="./inc/_header.jsp"/>
 <jsp:include page="./inc/_menu.jsp"/>
 
+<input type="button" value="Click here... attention ça peut sauter!" id="get">
+
+<div id="parent">
+</div>
 
 <main>
 
-
-
-
-
+ <script>
+ 	
+	 document.querySelector('#get').addEventListener('click',()=>{
+			 fetch("/demo1/api/tache")
+			 .then((response) => response.json())
+			 .then((data)=>{
+				 let parent = document.getElementById('parent');
+					console.table(data);
+				 for(element of data){
+					let p = document.createElement('p');
+					p.innerHTML = element.nom + "---" +element.description + 
+					"---" + element.date.year + 
+					"/" + element.date.monthValue + 
+					"/" + element.date.dayOfMonth + "<br>";
+					parent.appendChild(p);
+				} 
+			 });
+		});
+ 
+ </script>
 
 </main>
-
-
 
  <jsp:include page="/WEB-INF/pages/inc/_footer.jsp"/>
 </body>

@@ -21,7 +21,6 @@ public class ExempleRessource {
 		
 		users.add(new User("test", "test"));
 		
-		return users;
-		
+		return users;	
 	}
 }
