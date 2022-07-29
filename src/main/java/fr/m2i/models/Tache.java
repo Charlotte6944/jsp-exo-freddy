@@ -1,14 +1,12 @@
 package fr.m2i.models;
 
-import java.sql.Date;
-
 public class Tache {
 	
 	private String nom;
 	private String description;
-	private Date date;
+	private String date;
 	
-	public Tache(String nom, String description, Date date) {
+	public Tache(String nom, String description, String date) {
 		this.setDate(date);
 		this.setDescription(description);
 		this.setNom(nom);
@@ -26,10 +24,10 @@ public class Tache {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
