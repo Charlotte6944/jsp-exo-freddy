@@ -1,0 +1,71 @@
+body{
+	
+	background-color:orange;
+	
+	
+}
+header{
+	height:13em;
+	text-align: center;
+}
+.left{
+	width:80%;
+	display:inline-block;
+}
+.right{
+	width:10%;
+	display:inline-block;
+	
+}
+
+fieldset{
+	
+	width:10em;
+	
+}
+.logout{
+	border:1px solid black;
+	text-decoration: none;
+	color:white;
+	background-color:silver;
+}
+.logout:hover{
+	background-color:blue;
+}
+.logout:visited{
+	text-decoration: none;
+	color:white;
+}
+fieldset{
+	box-shadow:3px 3px 3px black;
+}
+fieldset form div{
+	margin-bottom:1em;
+}
+fieldset form input[type='submit']{
+	margin-top:1em;
+	width:100%;
+	border:0;
+	background-color:grey;
+	color:white;
+}
+header{
+	border-bottom : 1px dotted silver;
+	box-shadow: 3px 3px 3px black;
+}
+nav {
+	background-color:white;
+	text-align:center;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+}
+nav ul li a{
+	text-decoration: none;
+	color:black;
+}
+nav ul li a:visited{
+	text-decoration: none;
+	color:black;
+}
