@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebFilter({"/secretone", "/secrettwo"})
 public class LoginFilter implements Filter {
 	
-	private static String PAGE = "/WEF-INF/pages/login.jsp";
+	private static String PAGE = "http://localhost:8080/demo1/welcome";
 
     /**
      * Default constructor. 
@@ -36,13 +37,13 @@ public class LoginFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		Object req = (Object) request.getAttribute("auth");
+		HttpServletRequest resp = (HttpServletRequest) request;
 		
-		if (req == null) {
+		if (resp == null) {
 			HttpServletResponse httpresponse = (HttpServletResponse) response;
 			httpresponse.sendRedirect(PAGE);
 		} else {
-			chain.doFilter(request, response);			
+			chain.doFilter(request, response);
 		}
 	}
 
