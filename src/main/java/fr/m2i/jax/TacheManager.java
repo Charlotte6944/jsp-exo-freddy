@@ -1,5 +1,6 @@
 package fr.m2i.jax;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +20,10 @@ public class TacheManager {
 		
 		List<Tache> taches = new ArrayList<Tache>();
 		
-		taches.add(new Tache("Cuisine", "Faire la cuisine", "18/01/2023"));
-		taches.add(new Tache("Vaisselle", "Faire la vaisselle", "aujourd'hui"));
-		taches.add(new Tache("Jouer", "Jouer au foot", "21/08/2022"));
-		taches.add(new Tache("Coder", "Faire un Jax", "Hier, tu es en retard"));
+		taches.add(new Tache("Cuisine", "Faire la cuisine", LocalDateTime.now()));
+		taches.add(new Tache("Vaisselle", "Faire la vaisselle", LocalDateTime.now()));
+		taches.add(new Tache("Jouer", "Jouer au foot", LocalDateTime.now()));
+		taches.add(new Tache("Coder", "Faire un Jax", LocalDateTime.now()));
 		
 		return taches;
 		

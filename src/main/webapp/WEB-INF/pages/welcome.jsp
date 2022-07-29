@@ -37,16 +37,16 @@
 					console.table(data);
 				 for(element of data){
 					let p = document.createElement('p');
-					p.innerHTML = element.nom + "---" +element.description + "---" +element.date + "<br>";
+					p.innerHTML = element.nom + "---" +element.description + 
+					"---" + element.date.year + 
+					"/" + element.date.monthValue + 
+					"/" + element.date.dayOfMonth + "<br>";
 					parent.appendChild(p);
 				} 
 			 });
 		});
  
  </script>
-
-
-
 
 </main>
 
