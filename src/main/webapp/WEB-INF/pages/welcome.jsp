@@ -97,19 +97,21 @@
 	</script>
 
 	<div id="formulaire">
-		<fieldset legend="Formulaire création User">	
+		
 			<form action="<c:url value="/api/creationuser/newuser"/>" method="post" >
-  				<div class="form-example">
-				    <label for="login">Entrez your login: </label>
-				    <input type="text" name="login" id="login" required>
-			  	    <label for="mdp">Entrez votre mot de passe: </label>
-				    <input type="text" name="mdp" id="mdp" required>
-			  	</div>
-				  <div class="form-example">
-				    <input type="submit" value="Création !">
-				  </div>	
-			</form>
-		</fieldset>	
+				<fieldset> 
+					<legend>"Formulaire création User"</legend>	
+					<div class="form-example">
+						<label for="login">Entrez your login: </label>
+						<input type="text" name="login" id="login" required>
+						<label for="mdp">Entrez votre mot de passe: </label>
+						<input type="text" name="mdp" id="mdp" required>
+					</div>
+					<div class="form-example">
+						<input type="submit" value="Création !">
+					</div>	
+				</fieldset>	
+			</form>	
 	</div>
 	
 	
